@@ -1,5 +1,7 @@
 # DNC Serial Engine
 
+[![build](https://github.com/dev-kaiki/dnc-serial-engine/actions/workflows/build.yml/badge.svg)](https://github.com/dev-kaiki/dnc-serial-engine/actions/workflows/build.yml)
+
 A production RS-232 **DNC engine** (Direct Numerical Control) for CNC machine tools, written in C++17 / Qt.
 It streams G-code programs to CNC controllers over serial, receives programs back from them, and — critically — does so **without overflowing the machine's receive buffer**, on hardware that gives you almost no feedback to work with.
 
