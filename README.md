@@ -6,7 +6,7 @@ A production RS-232 **DNC engine** (Direct Numerical Control) for CNC machine to
 It streams G-code programs to CNC controllers over serial, receives programs back from them, and — critically — does so **without overflowing the machine's receive buffer**, on hardware that gives you almost no feedback to work with.
 
 Extracted from a system running in production on a real shop floor.
-Built and maintained by [Kaiki Quadros](https://github.com/dev-kaiki) at SMI, published with the company's permission.
+Built and maintained by [Kaiki Quadros Ferreira](https://github.com/dev-kaiki) at SMI, published with the company's permission.
 
 ---
 
