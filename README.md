@@ -7,6 +7,7 @@ It streams G-code programs to CNC controllers over serial, receives programs bac
 
 Extracted from a system running in production on a real shop floor.
 Built and maintained by [Kaiki Quadros Ferreira](https://github.com/dev-kaiki) at SMI, published with the company's permission.
+Ported to Android tablets in [`dnc-android`](https://github.com/dev-kaiki/dnc-android), which carries this engine over unchanged behind an extracted `ISerialPort` interface.
 
 ---
 
