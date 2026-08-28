@@ -11,6 +11,21 @@ Ported to Android tablets in [`dnc-android`](https://github.com/dev-kaiki/dnc-an
 
 ---
 
+## The software running
+
+![Operation screen: a loaded program, session status, effective transfer rate and the eight RS-232 line signals monitored live](docs/screenshots/operation.png)
+
+The eight line signals on the right are how the engine knows whether the machine is
+keeping up — they are the only feedback an old controller gives you.
+
+![RS-232 settings: baud rate, parity, data and stop bits, flow control, EOF character, buffer sizes and signal polling interval](docs/screenshots/rs232-settings.png)
+
+Every CNC wants a different combination, so all of it is per-machine: flow-control
+method, buffer sizes, the end-of-file character, and how often the line signals are
+polled. These are the knobs the [engineering log](docs/engineering-log/) is about.
+
+---
+
 ## The problem this solves
 
 A CNC controller from the 80s or 90s has a serial port, a few kilobytes of buffer, and no way to tell you how full that buffer is. You get one bit of backpressure — `XOFF`, or `CTS` going low — and it arrives *late*.
