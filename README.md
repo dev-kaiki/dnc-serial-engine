@@ -92,6 +92,18 @@ cmake --build build
 ctest --test-dir build
 ```
 
+The same three lines on Linux, Windows and macOS — CI runs all three. There is
+no platform code in here to make portable: every serial operation goes through
+`QSerialPort`, and the only `if(WIN32)` in the build is a pair of Windows
+version macros. That was already true and simply untested; the macOS job is
+what keeps it true.
+
+On macOS, `brew install qt cmake ninja` is enough. A USB-to-RS-232 adapter
+appears as `/dev/cu.usbserial-*` and `QSerialPortInfo` enumerates it like any
+other port; the FTDI and Prolific chips found in these adapters have had
+in-kernel drivers since macOS 10.9, so the vendor kext is not needed and is
+usually worse.
+
 ## Testing without a CNC
 
 `CncSimulator` emulates a controller with a bounded buffer and configurable `XON/XOFF` behaviour, so the flow logic can be exercised on a bench.
