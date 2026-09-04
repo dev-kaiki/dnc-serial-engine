@@ -11,7 +11,11 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: [ubuntu-latest, windows-latest]
+        # macOS entra na matriz porque o engine nao tem nada de Windows
+        # dentro: toda a porta serial passa por QSerialPort. Se um dia
+        # alguem escrever uma chamada de API do Windows aqui, este job
+        # e quem avisa — antes de alguem tentar compilar no Mac.
+        os: [ubuntu-latest, windows-latest, macos-latest]
     runs-on: ${{ matrix.os }}
 
     steps:
